@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
+        <title>Document</title>
+        <style>
+            #bag{
+                width: 200px;
+                height: 500px;
+                margin: 0 auto;
+                background: url(./img/bag.png) center no-repeat;
+                background-size: 80%;
+            }
+
+            #bag.burst{
+                background-image: url(./img/bag-burst.png);
+            }
+
+            #bag-health{
+                width: 200px;
+                border: 2px solid #000;
+                margin: 0 auto 20px auto;
+            }
+
+            #bag-health div{
+                height: 20px;
+                background: crimson
+            }
+        </style>
+    </head>
+    <body>
+        <div id="root" class="container">
+            <div id="bag" :class="{ burst: ended }"></div> 
+
+            <div id="bag-health">
+                <div :style="{ width: this.health + '%'}"></div>
+            </div>
+
+            <button class="button is-danger" v-if="!ended" @click="punch">Punch</button> 
+            <button class="button is-primary" @click="reset">Reset</button> 
+
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="index.js"></script>
+    </body>
+</html>

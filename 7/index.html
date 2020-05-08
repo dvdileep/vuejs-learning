@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
+        <title>Document</title>
+    </head>
+    <body>
+        <div id="root" class="container">
+            <button v-on:click="error = !error">Toggle Error</button> 
+            <button @click="success = !success">Toggle Success</button> 
+            <p v-if="error">Showing the error</p>
+            <p v-else-if="success">Showing the Success</p>
+            <hr>
+            <p v-show="error">Display error</p>
+            <p v-show="success">Display success</p>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="index.js"></script>
+    </body>
+</html>
